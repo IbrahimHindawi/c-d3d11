@@ -1,0 +1,3 @@
+C:/devel/c-d3d11/build/CMakeFiles/c-d3d11.dir
+C:/devel/c-d3d11/build/CMakeFiles/edit_cache.dir
+C:/devel/c-d3d11/build/CMakeFiles/rebuild_cache.dir

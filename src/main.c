@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <vector>
 #define COBJMACROS
 #define WIN32_LEAN_AND_MEAN
 #include <windows.h>
@@ -191,7 +190,7 @@ bool Load() {
     HRESULT hr = S_FALSE;
     bool result = false;
     ID3DBlob *vertex_buffer_blob = NULL;
-    result = CompileShader(L"shaders/shader_green_color.fx", TEXT("VS_Main"), TEXT("vs_4_0"), &vertex_buffer_blob);
+    result = CompileShader(L"resources/shader_green_color.fx", TEXT("VS_Main"), TEXT("vs_4_0"), &vertex_buffer_blob);
     if (!result) {
         MessageBox(hWnd, TEXT("Unable to load vertex shader"), TEXT("Error"), MB_OK);
         return false;
@@ -218,7 +217,7 @@ bool Load() {
     ID3D10Blob_Release(vertex_buffer_blob);
     vertex_buffer_blob = NULL;
     ID3DBlob *pixel_buffer_blob = NULL;
-    result = CompileShader(L"shaders/shader_green_color.fx", TEXT("PS_Main"), TEXT("ps_4_0"), &pixel_buffer_blob);
+    result = CompileShader(L"resources/shader_green_color.fx", TEXT("PS_Main"), TEXT("ps_4_0"), &pixel_buffer_blob);
     if (!result) {
         MessageBox(hWnd, TEXT("Unable to load pixel shader"), TEXT("Error"), MB_OK);
         return false;
@@ -284,8 +283,12 @@ void Render() {
     ID3D11DeviceContext_Draw(gfx.context, 3, 0);
     IDXGISwapChain_Present(gfx.swap_chain, 0, 0);
 }
-
+#ifdef _CONSOLE
+int main(int argc, char* argv[]) {
+#else
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE previnstance, LPSTR cmdline, int nCmdShow) {
+#endif
+// int main() {
     UNREFERENCED_PARAMETER(previnstance);
     UNREFERENCED_PARAMETER(cmdline);
 

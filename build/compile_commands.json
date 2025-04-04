@@ -1,0 +1,8 @@
+[
+{
+  "directory": "C:/devel/c-d3d11/build",
+  "command": "C:\\PROGRA~1\\MICROS~4\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1440~1.338\\bin\\Hostx64\\x64\\cl.exe  /nologo -IC:\\devel\\c-d3d11\\src -IC:\\devel\\c-d3d11\\extern\\haikal\\src\\meta_arena\\gen -IC:\\devel\\c-d3d11\\extern\\cglm\\include /DWIN32 /D_WINDOWS /Ob0 /Od /RTC1 -MDd -Zi /FoCMakeFiles\\c-d3d11.dir\\src\\main.c.obj /FdCMakeFiles\\c-d3d11.dir\\ /FS -c C:\\devel\\c-d3d11\\src\\main.c",
+  "file": "C:\\devel\\c-d3d11\\src\\main.c",
+  "output": "CMakeFiles\\c-d3d11.dir\\src\\main.c.obj"
+}
+]
